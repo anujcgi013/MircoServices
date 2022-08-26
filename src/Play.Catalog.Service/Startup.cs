@@ -37,7 +37,7 @@ namespace Play.Catalog.Service
             BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
             BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
 
-            serviceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
+            serviceSettings = Configuration.GetSection("ServiceSettings");
 
             services.AddSingleton(ServiceProvider =>
             {
